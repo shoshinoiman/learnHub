@@ -1,0 +1,79 @@
+/* עיצוב כרטיסי הקורס */
+.course-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 15px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    /* אפקט של ריחוף */
+}
+
+/* עיצוב כפתור בתוך כרטיס הקורס */
+.course-button {
+    color: white;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.course-button:hover {
+    background-color: #1b1b1c;
+    /* שינוי צבע כשעוברים עם העכבר */
+}
+
+/* עיצוב כותרת כרטיס */
+mat-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+
+
+.course-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.course-card mat-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0D47A1;
+    text-align: center;
+}
+
+.course-card mat-card-header {
+    display: flex;
+    justify-content: center;
+}
+
+.course-card mat-card-content {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.enroll-button {
+    font-weight: bold;
+}
+
+.course-button {
+    font-weight: bold;
+    background: #FFD700;
+    color: black;
+}

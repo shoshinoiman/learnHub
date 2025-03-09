@@ -1,0 +1,184 @@
+/* -------------------- קורסים -------------------- */
+.course-card {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* חצי שקוף */
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center; /* ממורכז */
+  }
+  
+  .course-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .course-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .course-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #3f51b5; /* צבע אינדיגו */
+    font-family: 'Playfair Display', serif;
+  }
+  
+  button {
+    margin-right: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-transform: none; /* כפתורים לא יהיו באותיות גדולות */
+  }
+  
+  button.mat-raised-button {
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  button.mat-raised-button:hover {
+    background-color: #303f9f;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  button.mat-stroked-button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    color: #3f51b5;
+    border: 2px solid #3f51b5;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  button.mat-stroked-button:hover {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  button.mat-raised-button[color="primary"] {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  button.mat-raised-button[color="accent"] {
+    background-color: #ff4081;
+    color: white;
+  }
+  
+  button.mat-raised-button[color="warn"] {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  button.mat-raised-button[color="primary"]:hover {
+    background-color: #303f9f;
+  }
+  
+  button.mat-raised-button[color="accent"]:hover {
+    background-color: #f50057;
+  }
+  
+  button.mat-raised-button[color="warn"]:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* -------------------- שיעורים -------------------- */
+  .lessons-list {
+    margin-top: 20px;
+  }
+  
+  .lesson-item {
+    background-color: #fafafa;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lesson-item:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .lesson-item h3 {
+    font-size: 1.5rem;
+    color: #3f51b5;
+    font-weight: 600;
+  }
+  
+  .lesson-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* -------------------- כפתורים מותאמים אישית -------------------- */
+  .add-course-button,
+  .add-lesson-button {
+    background-color: #3f51b5;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+  }
+  
+  .add-course-button:hover,
+  .add-lesson-button:hover {
+    background-color: #303f9f;
+  }
+  
+  /* -------------------- כרטיסי קורסים -------------------- */
+  mat-card {
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center; /* ממורכז */
+  }
+  
+  mat-card-header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  mat-card-content {
+    padding: 20px;
+  }
+  
+  /* -------------------- טיפוגרפיה -------------------- */
+  p, h3 {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .mat-card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #3f51b5;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  /* -------------------- עיצוב כותרות ומרווחים -------------------- */
+  .course-actions {
+    margin-top: 20px;
+  }
+  
+  .course-description p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  mat-divider {
+    margin: 20px 0;
+  }
+  

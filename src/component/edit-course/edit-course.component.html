@@ -1,0 +1,15 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+        <h2>עריכת קורס</h2>
+        <label>כותרת:</label>
+        <input type="text" [(ngModel)]="course.title" value="{{course.title}}">
+        <br />
+        <label>תיאור:</label>
+        <textarea [(ngModel)]="course.description"></textarea>
+
+        <div class="buttons">
+            <button (click)="saveChanges()">💾 שמור</button>
+            <button (click)="close.emit()">❌ סגור</button>
+        </div>
+    </div>
+</div>

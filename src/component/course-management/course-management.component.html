@@ -1,0 +1,156 @@
+<!-- -------------------- רשימת קורסים ------------------>
+<!-- @for(course of courseList;track course.id){
+<div>
+    <button (click)="updateCorse(course)">Edit</button>
+    <button (click)="deleteCourse(course.id)">Delete</button>
+    <button (click)="showLessons(course)">lessons</button>
+    <button (click)="course.isEnrolled ? deleteStudentToCourse(course) : addStudentToCourse(course)">
+        {{ course.isEnrolled ? 'Unenroll' : 'Enroll' }}
+    </button>
+</div>
+<br />
+<div>{{course.title}}</div>
+<br />
+<div>{{course.description}}</div>
+
+<br /> -->
+<!-- @if(course.showLessons){
+    @for (lesson of lessonsList; track lesson.id) {
+    <div>{{lesson.title}}</div>
+    <div>{{lesson.content}}</div>
+    <button type="button">Edit</button>
+    <button type="button">Delete</button>
+    }
+} -->
+<!-- --------------------רשימת שיעורים ------------------>
+<!-- 
+@if(course.showLessons){
+<div>
+
+    @for (lesson of lessonsList; track lesson.id) {
+
+    <div>{{lesson.title}}</div>
+    <div>{{lesson.content}}</div>
+
+    <button type="button" (click)="updateLesson(lesson)">Edit</button>
+    <button type="button" (click)="deleteLesson(lesson.id,course.id)">Delete</button>
+    @if(selectedLesson){
+    <app-edit-lesson [lesson]="lesson" (close)="closeEditModel()" (save)="saveUpdatedLesson(lesson)"></app-edit-lesson>
+    }
+    }
+
+</div>
+<br /> -->
+<!-- --------------------הוספת שיעור------------------>
+<!-- 
+<button (click)="onClickAddLesson()">add lesson</button>
+
+@if(showAddLesson){
+<app-add-lesson (close)="closeAddModelLesson()" (lessonAdded)="addLesson($event)" [course]="course"></app-add-lesson>
+}
+}
+
+<br /> -->
+<!-- --------------------הוספת קורס------------------>
+
+<!-- @if(selectedCourse){
+<app-edit-course [course]="selectedCourse" (close)="closeEditModel()"
+    (save)="saveUpdatedCourse(course)"></app-edit-course>
+}
+
+
+
+} -->
+<!-- 
+<br />
+
+
+
+<button (click)="onClickAddCourse()">add course</button>
+
+@if(showAddCourse){
+<app-add-course (close)="closeAddModel()" (courseAdded)="addCourse($event)"></app-add-course>
+}
+ -->
+
+
+<!-- <button (click)="">Insert</button> -->
+
+
+
+
+<!-- -------------------- רשימת קורסים ------------------>
+@for(course of courseList;track course.id){
+    <mat-card class="course-card">
+      <mat-card-header>
+        <mat-card-title class="course-title">{{ course.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="course-actions">
+          <button mat-raised-button color="accent" class="action-button" (click)="updateCorse(course)">
+            <mat-icon>edit</mat-icon> Edit
+          </button>
+          <button mat-raised-button color="warn" class="action-button" (click)="deleteCourse(course.id)">
+            <mat-icon>delete</mat-icon> Delete
+          </button>
+          <button mat-raised-button color="primary" class="action-button" (click)="showLessons(course)">
+            <mat-icon>library_books</mat-icon> Lessons
+          </button>
+          <button mat-raised-button 
+                  color="course.isEnrolled ? 'warn' : 'primary'" 
+                  class="enroll-button"
+                  (click)="course.isEnrolled ? deleteStudentToCourse(course) : addStudentToCourse(course)">
+            {{ course.isEnrolled ? 'Unenroll' : 'Enroll' }}
+          </button>
+        </div>
+  
+        <div class="course-description">
+          <p>{{ course.description }}</p>
+        </div>
+  
+        <!-- -------------------- רשימת שיעורים -------------------- -->
+        @if(course.showLessons){
+          <mat-divider></mat-divider>
+          <div class="lessons-list">
+            <mat-list>
+              @for(lesson of lessonsList; track lesson.id){
+                <mat-list-item class="lesson-item">
+                  <h3>{{ lesson.title }}</h3>
+                  <p>{{ lesson.content }}</p>
+                  <button mat-stroked-button (click)="updateLesson(lesson)">Edit</button>
+                  <button mat-stroked-button (click)="deleteLesson(lesson.id, course.id)">Delete</button>
+                </mat-list-item>
+              }
+            </mat-list>
+          </div>
+        }
+        
+        <!-- -------------------- הוספת שיעור -------------------- -->
+        <button mat-raised-button color="accent" class="add-lesson-button" (click)="onClickAddLesson()">Add Lesson</button>
+  
+        @if(showAddLesson){
+          <app-add-lesson (close)="closeAddModelLesson()" 
+                          (lessonAdded)="addLesson($event)" 
+                          [course]="course">
+          </app-add-lesson>
+        }
+  
+        <!-- -------------------- הוספת קורס -------------------- -->
+        @if(selectedCourse){
+          <app-edit-course [course]="selectedCourse" 
+                           (close)="closeEditModel()" 
+                           (save)="saveUpdatedCourse(course)">
+          </app-edit-course>
+        }
+      </mat-card-content>
+    </mat-card>
+  }
+  <!-- -------------------- כפתור הוספת קורס -------------------- -->
+  <button mat-raised-button color="primary" class="add-course-button" (click)="onClickAddCourse()">Add Course</button>
+  
+  @if(showAddCourse){
+    <app-add-course (close)="closeAddModel()" 
+                    (courseAdded)="addCourse($event)">
+    </app-add-course>
+  }
+  

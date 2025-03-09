@@ -1,0 +1,45 @@
+<!-- <div>
+    <p> {{course?.title}} </p>
+    <br />
+    <p>{{course?.description}} </p>
+    <br />
+    <button onclick="showLessons()">show lessons</button>
+    <br/>
+   
+    @if(isShow){
+
+    @for(lesson of lessons;track $index){
+
+
+    }
+    }
+</div> -->
+
+<div class="course-details-container">
+    <!-- Display course title -->
+    <mat-card class="course-card">
+      <mat-card-header>
+        <mat-card-title class="course-title">{{ course?.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <!-- Course description -->
+        <p class="course-description">{{ course?.description }}</p>
+        
+        <button mat-raised-button color="primary" (click)="showLessons()" class="show-lessons-button">Show Lessons</button>
+      </mat-card-content>
+    </mat-card>
+    
+    <!-- Show lessons if isShow is true-->
+    @if(isShow){
+      <mat-divider></mat-divider>
+    
+      <mat-list class="lessons-list">
+        @for(lesson of lessons; track lesson.id){
+          <mat-list-item class="lesson-item">
+            {{ lesson.title }}
+          </mat-list-item>
+        }
+      </mat-list>
+    }
+
+  

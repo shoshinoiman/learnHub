@@ -1,0 +1,84 @@
+body{
+    background-color: rgba(255, 255, 255, 0); 
+}
+/* container for the title */
+.title-container {
+    
+    position: absolute;
+    top: 20px;  /* Adjust vertical position */
+    left: 50%;
+    transform: translateX(-50%);  /* Centers the title horizontally */
+    z-index: 10;  /* Makes sure the title stays on top */
+  }
+  
+  .title {
+    font-size: 4rem;  /* גודל טקסט גדול */
+    font-weight: bold;
+    color: #003366;  /* כחול כהה */
+    font-family: 'Arial', sans-serif;  /* גופן מודרני */
+    text-transform: uppercase;
+    letter-spacing: 4px;  /* רווח בין האותיות */
+    text-align: center;
+    line-height: 1.2;  /* מגדיל את המרווח בין השורות */
+    word-wrap: break-word;  /* חותך את המילים כאשר אין מקום */
+    white-space: normal;  /* מאפשר לטקסט לשבור שורות אם צריך */
+  }
+  
+  
+  .home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    position: relative; /* Ensure title is positioned correctly */
+  }
+  
+  .content {
+    max-width: 800px;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+  
+  .card-header {
+    margin-bottom: 20px;
+  }
+  
+  .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #003366;
+    text-align: center;
+  }
+  
+  .card-body p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  
+  .card-footer {
+    text-align: center;
+  }
+  
+  .explore-btn {
+    background-color: #ffcc00;
+    color: #003366;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .explore-btn:hover {
+    background-color: #ff9900;
+  }
+  

@@ -1,0 +1,12 @@
+<div class="modal">
+    <h2>➕ הוספת שיעור חדש</h2>
+    <label>📌 שם השיעור:</label>
+    <input type="text" [(ngModel)]="newLesson.title">
+  
+    <label>📝 תוכן השיעור:</label>
+    <textarea [(ngModel)]="newLesson.content"></textarea>
+  
+    <button (click)="addLesson()">✅ שמירה</button>
+    <button (click)="close.emit()">❌ ביטול</button>
+  </div>
+  

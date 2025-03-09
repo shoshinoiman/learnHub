@@ -1,0 +1,67 @@
+<!-- @for(course of courses;track course){
+    <button [routerLink]="['/course-details',course.id]">{{course.title}}</button>
+    }
+   <router-outlet></router-outlet> -->
+
+<!-- 
+   <mat-nav-list>
+    @for(course of courses; track course){
+        @if(courses){
+      <mat-card class="course-card">
+        <mat-card-header>
+          <mat-card-title>{{ course.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <button mat-raised-button 
+            color="course.isEnrolled ? 'warn' : 'primary'" 
+            class="enroll-button"
+            (click)="course.isEnrolled ? deleteStudentToCourse(course) : addStudentToCourse(course)">
+      {{ course.isEnrolled ? 'Unenroll' : 'Enroll' }}
+    </button>
+          <button mat-button [routerLink]="['/course-details', course.id]" class="course-button">
+            View Details
+          </button>
+        </mat-card-content>
+      </mat-card>
+      <br/>
+    }
+    }
+  </mat-nav-list>
+  
+  <router-outlet></router-outlet>
+   -->
+
+
+
+
+
+
+   <mat-nav-list class="course-list">
+    @for (course of courses; track course) {
+      @if (courses) {
+        <mat-card class="course-card">
+          <mat-card-header>
+            <mat-card-title class="course-title">{{ course.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="button-group">
+              <button
+                mat-raised-button
+                [color]="course.isEnrolled ? 'warn' : 'primary'"
+                class="enroll-button"
+                (click)="course.isEnrolled ? deleteStudentToCourse(course) : addStudentToCourse(course)">
+                {{ course.isEnrolled ? 'Unenroll' : 'Enroll' }}
+              </button>
+              <button mat-stroked-button color="accent" [routerLink]="['/course-details', course.id]" class="details-button">
+                View Details
+              </button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    }
+  </mat-nav-list>
+  
+  <router-outlet></router-outlet>
+  
+  

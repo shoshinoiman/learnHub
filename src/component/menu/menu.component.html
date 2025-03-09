@@ -1,0 +1,72 @@
+<!-- <div class="profile-circle">
+    {{ userName }}
+</div> -->
+
+
+
+<!-- 
+<nav>
+    @if(!getFromSessionStorage('token')){
+    
+        <a routerLink="register" routerLinkActive="active">sign up</a>
+        <br />
+        <a routerLink="login" routerLinkActive="active">sign in</a>
+        <br/>
+    }
+        <a routerLink="" routerLinkActive="active">home</a>
+        <br/>
+        <a routerLink="courses" routerLinkActive="active">courses</a>
+        <br/>
+        <a routerLink="courseManagement" routerLinkActive="active">manager</a>
+
+    </nav>
+    <router-outlet></router-outlet> -->
+
+
+
+ <!-- <nav>
+    @if(!getFromSessionStorage('token')){
+      <a routerLink="register" routerLinkActive="active">sign up</a>
+      <a routerLink="login" routerLinkActive="active">sign in</a>
+    }
+      <a routerLink="" routerLinkActive="active">home</a>
+      <a routerLink="courses" routerLinkActive="active">courses</a>
+      <a routerLink="courseManagement" routerLinkActive="active">manager</a>
+    
+  </nav>
+  <router-outlet></router-outlet> -->
+
+<!--     
+  <nav class="navbar">
+    @if(!getFromSessionStorage('token')){
+      <a routerLink="register" routerLinkActive="active">sign up</a>
+      <br />
+      <a routerLink="login" routerLinkActive="active">sign in</a>
+      <br />
+    }
+    <a routerLink="" routerLinkActive="active">home</a>
+    <br />
+    <a routerLink="courses" routerLinkActive="active">courses</a>
+    <br />
+    <a routerLink="courseManagement" routerLinkActive="active">manager</a>
+  </nav>
+  <router-outlet></router-outlet>
+   -->
+
+
+
+
+
+   <mat-toolbar color="primary" class="navbar">
+    <span class="spacer"></span>
+    @if(!getFromSessionStorage('token')) {
+      <a mat-button routerLink="register" routerLinkActive="active">Sign Up</a>
+      <a mat-button routerLink="login" routerLinkActive="active">Sign In</a>
+    }
+    <a mat-button routerLink="" routerLinkActive="active">Home</a>
+    <a mat-button routerLink="courses" routerLinkActive="active">Courses</a>
+    <a mat-button routerLink="courseManagement" routerLinkActive="active">Manager</a>
+  </mat-toolbar>
+  
+  <router-outlet></router-outlet>
+  

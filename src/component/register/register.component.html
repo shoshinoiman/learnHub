@@ -1,0 +1,143 @@
+<!-- 
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+
+    <label for="name">name</label>
+    <input type="text" id="name" formControlName="name">
+    @if(form["name"] && form["name"].errors && form["name"].touched){
+    @if(form["name"].errors["required"]) {
+    <div>name is required</div>
+    }
+    }
+
+
+    <label for="email">email</label>
+    <input type="email" id="email" formControlName="email">
+    @if(form["email"] && form["email"].errors && form["email"].touched){
+    @if(form["email"].errors["required"]) {
+    <div>email is required</div>
+    }
+    @if(form["email"].errors["email"]) {
+    <div>email is invalid</div>
+    }
+    }
+
+
+    <label for="password">password</label>
+    <input type="password" id="password" formControlName="password">
+    @if(form["password"] && form["password"].errors && form["password"].touched){
+    @if(form["password"].errors["required"]) {
+    <div>password is required</div>
+    }
+    @if(form["password"].errors["minlength"]) {
+    <div>password must be at least 4 characters</div>
+    }
+    @if(form["password"].errors["maxlength"]) {
+    <div>password must be at most 8 characters</div>
+    }
+    }
+
+
+    <label for="role">role</label> -->
+    <!-- <input type="text" id="role" formControlName="role"> -->
+    <!-- <select id="role" formControlName="role"> -->
+        <!-- @for(role of roles ;track role){
+        <option value="role">{{role}}</option>
+        } -->
+        <!-- <option value="admin">admin</option>
+        <option value="student">student</option>
+        <option value="teacher">teacher</option>
+
+    </select>
+    @if(form["role"] && form["role"].errors && form["role"].touched){
+    @if(form["role"].errors["required"]) {
+    <div>role is required</div>
+    }
+    }
+
+
+    <button type="submit" [disabled]="registerForm.invalid">register</button>
+</form> -->
+
+
+
+
+
+
+
+
+
+
+<mat-card class="register-card">
+    <mat-card-header>
+      <mat-card-title class="register-title">📝 Register</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="registerForm" (ngSubmit)="register()" class="register-form">
+        
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" formControlName="name" placeholder="Enter your name">
+          @if(registerForm.get('name')?.touched && registerForm.get('name')?.errors?.['required']){
+            <mat-error >
+            Name is required
+          </mat-error>
+        }
+        
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="Enter your email">
+          @if(registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']){
+          <mat-error>
+            Email is required
+          </mat-error>
+        }
+        @if(registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']){
+          <mat-error>
+            Invalid email format
+          </mat-error>
+        }
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Enter your password">
+          @if(registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']){
+          <mat-error>
+            Password is required
+          </mat-error>
+        }
+         @if(registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['minlength']){
+            <mat-error >
+            Password must be at least 4 characters
+          </mat-error>}
+          @if(registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['maxlength']){
+            <mat-error >
+            Password must be at most 8 characters
+          </mat-error>}
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Role</mat-label>
+          <mat-select formControlName="role">
+            <mat-option value="admin">Admin</mat-option>
+            <mat-option value="student">Student</mat-option>
+            <mat-option value="teacher">Teacher</mat-option>
+          </mat-select>
+         @if(registerForm.get('role')?.touched && registerForm.get('role')?.errors?.['required']){ 
+            <mat-error>
+            Role is required
+          </mat-error>}
+        </mat-form-field>
+  
+        <div class="register-actions">
+          <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">
+            ✅ Register
+          </button>
+        </div>
+  
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

@@ -1,0 +1,61 @@
+<!-- <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <label for="email">email</label>
+    <input type="email" id="email" formControlName="email">
+    @if(form["email"] && form["email"].errors && form["email"].touched){
+    @if(form["email"].errors["required"]) {
+    <div>name is required</div>
+    }
+    }
+
+    <label for="password">password</label>
+    <input type="password" id="password" formControlName="password">
+    @if(form["password"] && form["password"].errors && form["password"].touched){
+    @if(form["password"].errors["required"]) {
+    <div>password is required</div>
+    }
+    }
+
+    <button type="submit" [disabled]="loginForm.invalid">login</button>
+</form> -->
+
+
+
+
+
+
+
+
+
+
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-card class="login-card">
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-content>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" id="email" formControlName="email">
+          @if(loginForm.controls['email'].hasError('required')){
+          <mat-error>
+            Email is required
+          </mat-error>
+        }
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" id="password" formControlName="password">
+          @if(loginForm.controls['password'].hasError('required')){
+          <mat-error >
+            Password is required
+          </mat-error>
+        }
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+          Login
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </form>
+  

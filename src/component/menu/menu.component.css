@@ -1,0 +1,28 @@
+.navbar {
+    background-color: #003366 !important; 
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  a:hover {
+    color: #ffffff;
+  }
+  
+  .mat-toolbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
