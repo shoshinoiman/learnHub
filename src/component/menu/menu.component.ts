@@ -10,14 +10,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
-  // token!: any
-  // userName: string = '';
   constructor(private userService: UserService) { }
-  ngOnInit() {
-    // this.token = this.userService.getToken();
-    //  this.userName = this.userService.getUserName().toUpperCase();
 
-  }
   getFromSessionStorage(key: string): string | null {
     return sessionStorage.getItem(key);
   }

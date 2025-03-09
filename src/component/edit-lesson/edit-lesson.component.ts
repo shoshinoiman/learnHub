@@ -13,9 +13,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './edit-lesson.component.css'
 })
 export class EditLessonComponent {
-@Input() lesson!: Lesson; // מקבל את הקורס לעריכה
-  @Output() close = new EventEmitter<void>(); // סוגר את המודל
-  @Output() save = new EventEmitter<Lesson>(); // שולח עדכון לקומפוננטת האב
+@Input() lesson!: Lesson; 
+  @Output() close = new EventEmitter<void>();
+  @Output() save = new EventEmitter<Lesson>(); 
 constructor(private lessonService:LessonService) { }
   @Component({
     selector: 'app-edit-course',
@@ -25,10 +25,10 @@ constructor(private lessonService:LessonService) { }
   saveChanges() {
 this.lessonService.addLesson(this.lesson, this.lesson.courseId).subscribe({
   next: (response) => {alert("✅ " + this.lesson.title + " עודכן בהצלחה!");
-    this.save.emit(this.lesson); // שולח את העדכון
+    this.save.emit(this.lesson);
   },
   error: (e) => { alert("❌ ERROR edit " + e.error.messeege) }
 })
-    this.close.emit(); // סוגר את המודל
+    this.close.emit(); 
   }
 }

@@ -22,15 +22,6 @@ export class CoursesComponent {
   constructor(private coursesService: CourseService, private userService: UserService) { }
 
   ngOnInit() {
-    // this.coursesService.add().subscribe({
-    //   next: (response) => { alert("good") 
-    //     // this.courses.push(response.course);
-    //     this.show()
-    //     console.log("courses:"+this.courses);
-        
-    //   },
-    //   error: (e) => { alert(e.error.message) }
-    // });
     this.show()
   } 
 

@@ -29,13 +29,10 @@ export class RegisterComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
-      // role: ['', Validators.required,this.roleValidator.bind(this)]
       role: ['', Validators.required]
     });
   }
-  // roleValidator(control: any) {
-  //   return this.roles.includes(control.value) ? null : { invalidRole: true };
-  // }
+
   get form() {
     return this.registerForm.controls;
   }

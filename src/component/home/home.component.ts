@@ -19,17 +19,4 @@ import { UserService } from '../../services/user/user.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  // courses: Course[] = [];
-  // constructor(private coursesService: CourseService,private userService:UserService) { }
-  // ngOnInit() {
-  //   this.coursesService.getCourses().subscribe({
-  //     next: (response) => {
-  //       this.courses =response.courses; ;
-  //     },
-  //     error: (err) => {
-  //      alert('❌ ERROR: ' + (err.error.message || 'Home משהו השתבש'))
-  //     }
-  //   });
-  // } 
-}
+export class HomeComponent {}

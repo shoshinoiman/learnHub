@@ -22,14 +22,13 @@ export class AddLessonComponent {
   constructor(private lessonService: LessonService) { }
 
   addLesson() {
-    // if (!this.newLesson.title.trim() || !this.newLesson.content.trim()) {
-    //   alert("❌ יש למלא את כל השדות!");
-    //   return;
-    // }
+    if (!this.newLesson.title.trim() || !this.newLesson.content.trim()) {
+      alert("❌ יש למלא את כל השדות!");
+      return;
+    }
 
     this.lessonService.addLesson(this.newLesson, this.course.id).subscribe({
       next: () => {
-        alert("✅ הקורס נוסף בהצלחה!");
         this.lessonAdded.emit(this.newLesson); 
         this.close.emit(); 
       },

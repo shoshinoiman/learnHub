@@ -1,32 +1,3 @@
-<!-- <form [formGroup]="loginForm" (ngSubmit)="login()">
-    <label for="email">email</label>
-    <input type="email" id="email" formControlName="email">
-    @if(form["email"] && form["email"].errors && form["email"].touched){
-    @if(form["email"].errors["required"]) {
-    <div>name is required</div>
-    }
-    }
-
-    <label for="password">password</label>
-    <input type="password" id="password" formControlName="password">
-    @if(form["password"] && form["password"].errors && form["password"].touched){
-    @if(form["password"].errors["required"]) {
-    <div>password is required</div>
-    }
-    }
-
-    <button type="submit" [disabled]="loginForm.invalid">login</button>
-</form> -->
-
-
-
-
-
-
-
-
-
-
 
 <form [formGroup]="loginForm" (ngSubmit)="login()">
     <mat-card class="login-card">

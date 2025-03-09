@@ -111,7 +111,6 @@ export class CourseManagementComponent implements OnInit {
 
   deleteLesson(lessonId: number, courseId: number) {
     this.lessonService.deleteLesson(lessonId, courseId).subscribe({
-      // next: (response) => { alert("✅ " + response.messege) },
       error: (e) => { alert("❌ ERROR manager" + e.error.messeege) }
 
     })
@@ -126,7 +125,6 @@ export class CourseManagementComponent implements OnInit {
     const index = this.lessonsList.findIndex(c => c.id === updatedLesson.id);
     if (index !== -1) {
       this.lessonsList[index] = updatedLesson;  // עדכון הקורס ברשימה
-      // alert("✅ הקורס עודכן בהצלחה!");
     }
     this.selectedLesson = null; // סוגר את המודל
   }

@@ -10,7 +10,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-// import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-add-course',
@@ -24,15 +23,19 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './add-course.component.html',
   styleUrl: './add-course.component.css'
 })
+
 export class AddCourseComponent {
+
   newCourse: Course = {
     id: 0, title: '', description: '',
     teacherId: 0,
     showLessons: false,
     isEnrolled: false
   }
+
   @Output() close = new EventEmitter<void>();
   @Output() courseAdded = new EventEmitter<Course>();
+
   constructor(private courseService: CourseService) { }
 
   addCourse() {
@@ -44,7 +47,6 @@ export class AddCourseComponent {
 
     this.courseService.add(this.newCourse).subscribe({
       next: (response) => {
-        // alert("✅ הקורס נוסף בהצלחה!");
         this.courseAdded.emit(this.newCourse)
         this.close.emit()
       },
